@@ -6,17 +6,23 @@ Created on Feb 26, 2017
 import urllib.request
 from functions import turnoff,turnon,switch,listcreate,countlight
 import re
-'''import argparse
+def read_file(filename="input"):
+    if filename.startswith('http'):
+        return urllib.request.urlopen(filename).read().decode('UTF-8') 
+    else:
+        return open(filename).read()
+import argparse
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--input', help='input help')
 args = parser.parse_args()
 
-url = args.input'''
+filename = args.input
 # read the url 
-url=" http://claritytrec.ucd.ie/~alawlor/comp30670/input_assign3_c.txt" 
-data=urllib.request.urlopen(url).read()
-buffer=data.decode('UTF-8')  
+#url=" http://claritytrec.ucd.ie/~alawlor/comp30670/input_assign3.txt" 
+#data=urllib.request.urlopen(url).read()
+#buffer=data.decode('UTF-8')  
+buffer=read_file(filename=filename)
 content=buffer.splitlines()
 #print(content)
 '''catch the key number and words'''
@@ -29,7 +35,7 @@ y2=0
 
 for line in content[1:]:
     value=line.split()
-    print(line)
+    #print(line)
     #print(value)
     number=re.findall("[-+]?\d+[\.]?\d*[eE]?[-+]?\d*", line)
     #print(re.findall("[-+]?\d+[\.]?\d*[eE]?[-+]?\d*", line))
@@ -50,8 +56,8 @@ for line in content[1:]:
             
 
 result=countlight(list1)
-
-print(result)
+list2=[filename,result]
+print(list2)
             
                 
             
