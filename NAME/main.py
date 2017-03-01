@@ -53,7 +53,8 @@ for line in content[1:]:
         turnoff(list1,x1,x2,y1,y2)
     elif value[0]=='switch':
         switch(list1,x1,x2,y1,y2)
-            
+    else:
+        continue       
 
 result=countlight(list1)
 list2=[filename,result]
