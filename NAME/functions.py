@@ -14,6 +14,7 @@ def turnon(list,x1,x2,y1,y2):
     '''turnon funciton'''
     x1=max(x1,0)
     x2=min(len(list)-1,x2)
+    y1=max(y1,0)
     y2=min(len(list)-1,y2)
     for m in range(y1,y2+1):
         for n in range(x1,x2+1):
@@ -25,6 +26,7 @@ def turnoff(list,x1,x2,y1,y2):
     '''turnoff funciton'''
     x1=max(x1,0)
     x2=min(len(list)-1,x2)
+    y1=max(y1,0)
     y2=min(len(list)-1,y2)
     for m in range(y1,y2+1):
         for n in range(x1,x2+1):
@@ -35,6 +37,7 @@ def turnoff(list,x1,x2,y1,y2):
 def switch(list,x1,x2,y1,y2):
     '''switch function'''
     x1=max(x1,0)
+    y1=max(y1,0)
     x2=min(len(list)-1,x2)
     y2=min(len(list)-1,y2)
     for m in range(y1,y2+1):
@@ -46,12 +49,13 @@ def switch(list,x1,x2,y1,y2):
     return list   
 #pprint(switch(listcreate(10),1,5,1,1))    
 def countlight(list):
+    '''count how many ligths are turn on'''
     sum=0
     for item in list:
         sum+=item.count(True)
     return sum
-pprint(turnon(listcreate(10),0,9,0,9))
-pprint(countlight(turnon(listcreate(10),0,9,0,9)))
+#pprint(turnon(listcreate(10),0,9,0,9))
+#pprint(countlight(turnon(listcreate(10),0,9,0,9)))
 
     
         
