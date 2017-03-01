@@ -3,8 +3,15 @@ Created on Feb 27, 2017
 
 @author: Peng Xu
 '''
+import urllib.request
 from pprint import pprint
 '''create intial list''' 
+def read_file(filename="input"):
+    if filename.startswith('http'):
+        return urllib.request.urlopen(filename).read().decode('UTF-8') 
+    else:
+        return open(filename).read()
+    
 def listcreate(size):
     a2d =[[False]*size for _ in range(size)]
     return a2d
