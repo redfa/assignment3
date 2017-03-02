@@ -1,11 +1,11 @@
 from nose.tools import *
-from NAME.functions import *
+from src.functions import *
 
 
-'''def test1():
+def test1():
     filename="http://claritytrec.ucd.ie/~alawlor/comp30670/input_assign.txt"
     buffer=read_file(filename)
-    eq_(len(buffer),9506,"buffer sizes do not match")'''
+    eq_(len(buffer),9506,"buffer sizes do not match")
     
 def test2():
     list=listcreate(10)
