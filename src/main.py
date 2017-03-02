@@ -4,7 +4,7 @@ aa
 @author: Peng Xu
 '''
 import urllib.request
-import functions
+from . import functions
 import re
 import argparse
 
