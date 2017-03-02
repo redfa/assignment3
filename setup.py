@@ -7,9 +7,9 @@ setup(name="skeleton",
       author="Peng Xu",
       author_email="aonghus.lawlor@ucd.ie",
       licence="GPL3",
-      packages=['NAME'],
+      packages=['src'],
       entry_points={
-        'console_scripts':['led_tester=NAME.main:main']
+        'console_scripts':['led_tester=src.main:main']
         },
       install_requires=[
           'numpy',
